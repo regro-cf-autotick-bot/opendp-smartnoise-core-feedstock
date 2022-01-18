@@ -1,5 +1,5 @@
 {% set name = "opendp-smartnoise-core" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/py3/o/{{ name }}/opendp_smartnoise_core-{{ version }}-py3-none-any.whl
-  sha256: 2c3ceb22ab540f0b7ac3dbea53bc6c761483c2ebbc763b75ae320c05fa4b54a9
+  sha256: b8b4f90fc6b9982b9f45daa4473344f96e90429176aec3e828fb956225a15db4
 
 build:
   noarch: python
@@ -52,7 +52,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - d-cunningham
-    - oblute
     - mxr-conda
     
