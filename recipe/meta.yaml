@@ -1,5 +1,5 @@
 {% set name = "opendp-smartnoise-core" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/py3/o/{{ name }}/opendp_smartnoise_core-{{ version }}-py3-none-any.whl
-  sha256: b8b4f90fc6b9982b9f45daa4473344f96e90429176aec3e828fb956225a15db4
+  sha256: cb5f7346ee52bbce409b4ce399e8db9995e6e51e8da6cea9f66e9c2f93431851
 
 build:
   noarch: python
@@ -17,24 +17,24 @@ build:
   missing_dso_whitelist:
     - '*'
 
-requirements:  
+requirements:
   host:
     - pip
-    - python >=3.6 
+    - python >=3.6
   run:
     - python >=3.6
     - protobuf >=3.11.3
     - numpy >=1.18.2
     - setuptools >=41.4.0
     - pandas >=1.0.3
-    
+
 test:
   imports:
     - opendp.smartnoise.core
     - opendp.smartnoise.core.api
     - opendp.smartnoise.core.base
     - opendp.smartnoise.core.components
-    - opendp.smartnoise.core.value 
+    - opendp.smartnoise.core.value
   requires:
     - pip
   commands:
@@ -45,7 +45,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'This repository contains python bindings to the SmartNoise Core library and its underlying Rust binaries.'
+  summary: This repository contains python bindings to the SmartNoise Core library and its underlying Rust binaries.
   description: A pluggable library of differentially private algorithms and mechanisms for releasing privacy preserving queries and statistics.
   doc_url: https://docs.opendp.org/en/latest/smartnoise/
   dev_url: https://github.com/opendp/smartnoise-core-python
@@ -53,4 +53,4 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    
+
