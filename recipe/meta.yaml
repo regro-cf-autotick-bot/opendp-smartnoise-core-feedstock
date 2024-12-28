@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/py3/o/{{ name }}/opendp_smartnoise_core-{{ version }}-py3-none-any.whl
+  url: https://pypi.org/packages/py3/o/{{ name }}/opendp_smartnoise_core-{{ version }}-py3-none-any.whl
   sha256: b8b4f90fc6b9982b9f45daa4473344f96e90429176aec3e828fb956225a15db4
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
     - python -m pip install --no-deps --ignore-installed opendp_smartnoise_core-{{ version }}-py3-none-any.whl
   missing_dso_whitelist:
@@ -20,9 +20,9 @@ build:
 requirements:  
   host:
     - pip
-    - python >=3.6 
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - protobuf >=3.11.3
     - numpy >=1.18.2
     - setuptools >=41.4.0
@@ -37,6 +37,7 @@ test:
     - opendp.smartnoise.core.value 
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
